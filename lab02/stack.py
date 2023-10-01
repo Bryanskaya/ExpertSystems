@@ -1,0 +1,54 @@
+class Stack:
+    def __init__(self):
+        self.elements = []
+
+    def length(self):
+        return len(self.elements)
+
+    def push(self, element):
+        self.elements.append(element)
+
+    def pushArr(self, elementArr):
+        for i in range(len(elementArr) - 1, -1, -1):
+            self.push(elementArr[i])
+
+    def pop(self):
+        if self.length() == 0:
+            return None
+        return self.elements.pop()
+
+    def peek(self):
+        element = self.pop()
+        self.push(element)
+        return element
+
+    def isExist(self, item):
+        isFound = False
+        tempStack = Stack()
+
+        while self.length() != 0:
+            element = self.pop()
+            tempStack.push(element)
+
+            if element == item:
+                isFound = True
+                break
+        self.__upgradeStack(tempStack)
+
+        return isFound
+
+    def __upgradeStack(self, stack):
+        while stack.length() != 0:
+            self.push(stack.pop())
+
+    def show(self):
+        tempStack = Stack()
+        while self.length() != 0:
+            tempStack.push(self.pop())
+
+        while tempStack.length() != 0:
+            element = tempStack.pop()
+            if tempStack.length() != 0:
+                print(f'{element} -> ', end='')
+            else:
+                print(f'{element}')

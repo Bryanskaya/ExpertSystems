@@ -29,9 +29,3 @@ class Rule:
         self.goalNode = goalNode
         self.nodeArr = nodeArr
         self.isClosed = isClosed
-
-    def isNodeExist(self, node: Node):
-        for inode in self.nodeArr:
-            if inode.number == node.number:
-                return True
-        return False
