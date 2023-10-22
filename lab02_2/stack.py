@@ -17,6 +17,14 @@ class Stack:
             return None
         return self.elements.pop()
 
+    def remove_element(self, element):
+        self.elements.reverse()
+        try:
+            self.elements.remove(element)
+        except:
+            pass
+        self.elements.reverse()
+
     def peek(self):
         element = self.pop()
         self.push(element)
@@ -42,13 +50,6 @@ class Stack:
             self.push(stack.pop())
 
     def show(self):
-        tmp_stack = Stack()
-        while self.length() != 0:
-            tmp_stack.push(self.pop())
-
-        while tmp_stack.length() != 0:
-            element = tmp_stack.pop()
-            if tmp_stack.length() != 0:
-                print(f'{element} -> ', end='')
-            else:
-                print(f'{element}')
+        for element in self.elements:
+            print(element, end=' ')
+        print()
