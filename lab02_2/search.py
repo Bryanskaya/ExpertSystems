@@ -2,13 +2,13 @@ from items import Rule, Node, Label
 from stack import Stack
 
 
-# Обратный поиск от цели в глубину
-# Методы
-# 1. обратный поиск (основной)
-# 2. определение потомков текущей подцели
-# 3. бэктрекинг -- формирование списка запрещённых вершин и правил
-# 4. разметка
-# 5. определения дерева поиска по списку закрытых правил
+# Reverse search from goal to deep
+# Methods
+# 1. reverse search (main)
+# 2. find children for current goal
+# 3. backtracking -- form list of prohibited nodes and rules
+# 4. labeling
+# 5. create search tree by list of closed rules
 class Search:
     def __init__(self, rule_arr: [Rule]):
         self.rule_arr = rule_arr  # база знаний

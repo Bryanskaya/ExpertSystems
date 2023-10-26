@@ -2,9 +2,8 @@ from items import Rule, Node, Label
 from stack import Stack
 
 
-# Методы
-# 1. метод поиска в ширину от данных к цели
-# 2. метод родителей (закрытые правила)
+# Breadth-first search method from data to goal
+# (include parent method -- looks for closed rules)
 class Search:
     def __init__(self, rule_arr: [Rule]):
         self.rule_arr = rule_arr  # база знаний
