@@ -4,6 +4,9 @@ from items import Edge, Node
 
 
 def show(arr: list):
+    if arr == None:
+        print("Not found")
+        return
     for i in range(len(arr) - 1, -1, -1):
         if i != 0:
             print(f'{arr[i]} -> ', end='')
@@ -45,14 +48,19 @@ class Example:
 
 
 if __name__ == "__main__":
-    print("Методы поиска в графах пространства состояния")
+    print("Search methods in state graphs")
 
-    print("Метод поиска в глубину")
+    print("Depth First Search")
     edgeLst1 = Example().edgeLst_2()
     res = GraphDFS(edgeLst1).DFS(0, 7)
-    res.show()
+    if res == None:
+        print("Not found")
+    else:
+        res.show()
 
-    print("Метод поиска в ширину")
+    print("-------------------------")
+
+    print("Breadth First Search")
     edgeLst2 = Example().edgeLst_2()
     res = GraphBFS(edgeLst2).BFS(0, 7)
     show(res)

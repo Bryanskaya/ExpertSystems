@@ -18,10 +18,13 @@ class GraphDFS:
         self.goal = goal
 
         while self.childCounter and self.isSolutionNotFound:
-            self.sample_search()    # метод потомков
-            if self.isSolutionNotFound == 0:  # решение найдено
+            print("Current stack: ", end="")
+            self.opened.print()
+
+            self.sample_search()
+            if self.isSolutionNotFound == 0:
                 break
-            if self.childCounter == 0 and self.opened.length() > 1:  # откат
+            if self.childCounter == 0 and self.opened.length() > 1:
                 currentNode = self.opened.pop()
                 self.closed.append(currentNode.number)
                 self.childCounter = 1

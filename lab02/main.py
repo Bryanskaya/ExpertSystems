@@ -59,7 +59,7 @@ def test_1():
         Rule(116, node19, [node13, node20, node24])
     ]
 
-    Search(rule_arr).run(node8, [node5, node6, node2, node1, node18,
+    Search(rule_arr).run(node14, [node5, node6, node2, node1, node18,
                                  node22, node23, node7, node13])
 
 
