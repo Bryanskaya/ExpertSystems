@@ -4,6 +4,13 @@ class Stack:
 
     def length(self):
         return len(self.elements)
+    
+    
+    def print(self):
+        for i in range(self.length()):
+            print(self.elements[i], end=" ")
+        print()
+
 
     def push(self, element):
         self.elements.append(element)

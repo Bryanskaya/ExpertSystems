@@ -24,7 +24,7 @@ class GraphBFS:
             self.opened.print()
 
             self.sample_search()
-            if self.isSolutionNotFound == 0:  # решение найдено
+            if self.isSolutionNotFound == 0:
                 break
 
             currentNode = self.opened.get()

@@ -19,6 +19,9 @@ class GraphBFS:
         self.goal = goal
 
         while self.childCounter and self.isSolutionNotFound:
+            print("Current queue: ", end="")
+            self.opened.print()
+            
             self.sample_search()  # метод потомков
             if self.isSolutionNotFound == 0:  # решение найдено
                 break
