@@ -59,10 +59,11 @@ def test_1():
         Rule(116, node19, [node13, node20, node24])
     ]
 
-    # Search(rule_arr).run(node14, [node12, node6, node2, node1, node18,
-    #                               node22, node23, node7, node13])
+    Search(rule_arr).run(node14, [node12, node6, node2, node1, node18,
+                                  node22, node23, node7, node13])
 
-    Search(rule_arr).run(node3, [node12, node13])
+    # Search(rule_arr).run(node3, [node12, node13])
+
 
 
 if __name__ == "__main__":
